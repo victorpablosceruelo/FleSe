@@ -75,7 +75,15 @@ public class FuzzificationsAlgorithms {
         	        return Double.compare(c1, c2);
         	    }
         	});
-            resul[i][1]=contents.get(Math.round((contents.size()+1)/2)-1).toString();
+        	if (contents.size() % 2 == 0){
+        			int middle = contents.size()/2;
+            		double value =(contents.get(middle) + contents.get(middle-1))/2;
+            		resul[i][1]="" + value;																																																																																																																																																							;
+        		
+        	} else {
+        		resul[i][1]=contents.get(Math.round((contents.size()+1)/2)-1).toString();
+        	}
+            //resul[i][1]=contents.get(Math.round((contents.size()+1)/2)-1).toString();
             i++;
         }
 		//LOG.info("Default rule updated with: " + resul);
@@ -83,7 +91,7 @@ public class FuzzificationsAlgorithms {
         }
 
 	//use this method to test the fuzzification algorithm
-	/*
+	
 	public static void main(String [ ] args)
 	{
 	ArrayList<HashMap<String,String>> a = new ArrayList<HashMap<String,String>>();
@@ -96,7 +104,7 @@ public class FuzzificationsAlgorithms {
 	h2.put("50","0.2");
 	h2.put("100","0.4");
 	h2.put("150","0.6");
-	a.add(h2);
+	a.add(h2);/*
 	HashMap<String,String> h3 = new HashMap<String,String>();
 	h3.put("50","0.3");
 	h3.put("100","0.4");
@@ -118,7 +126,7 @@ public class FuzzificationsAlgorithms {
 	System.out.println(tab[1][0]);
 	System.out.println(tab[1][1]);
 	System.out.println(tab[2][0]);
-	System.out.println(tab[2][1]);
-	}*/
+	System.out.println(tab[2][1]);*/
+	}
 	
 }
